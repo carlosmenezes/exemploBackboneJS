@@ -7,15 +7,15 @@ define(
 			el: '#content',
 			initialize: function() {
 				this.collection = new projectsCollection;
-				this.collection.add({ name: 'Carlos' });
-					
+				this.collection.add([{ name: 'BackOff' }, { name: 'Moip'}]);
+				this.collection.add({ name: 'Big Ben' });
+
 				var compiledTemplate = _.template(projectListTemplate, { projects: this.collection.models });
-				
-				alert($(projectListTemplate));
+
 				$(this.el).html(compiledTemplate);
 			}
 		});
-	
+
 		return new projectListView;
 	}
 );
